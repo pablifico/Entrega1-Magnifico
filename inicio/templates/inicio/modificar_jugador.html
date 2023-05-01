@@ -1,0 +1,25 @@
+{% extends 'genericos/base.html' %}
+
+{% block title_head %}
+    <title>Modificar Jugador</title>
+{% endblock title_head %}
+
+{% block h1_header %}   
+    <h1>Modificando Jugadores</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+
+<form action={% url 'inico:modificar_jugador' jugador.id %} method="post">
+    {% csrf_token %}
+    <table>
+        {{form.media}}
+        {{from}}
+    </table>
+
+    <button>Modificar</button>
+</form>
+
+{% endblock contenido %}
+

@@ -1,0 +1,25 @@
+{% extends 'genericos/base.html' %}
+
+{% block title_head %}
+                    <title>Crear Jugador</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+                    <h1>Creando Jugadores</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+
+<form action={% url 'inico:crear_jugador' %} method="post">
+    {% csrf_token %}
+    <table>
+        {{from.media}}
+        {{from}}
+    </table>
+
+    <button>Crear</button>
+</form>
+
+{% endblock contenido %}
+

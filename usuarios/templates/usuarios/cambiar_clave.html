@@ -1,0 +1,27 @@
+{% extends 'genericos/base.html' %}
+
+{% block title_head %}
+    <title>Cambiar Clave</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+    <h1>Cambiar Clave</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+
+{% if form.error %}
+<p>El formulario no es válido.</p>
+{% endif %}
+
+
+<form action={% url 'usuarios:cambiar_clave' %} method="post">
+
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <button>Cambiar</button>
+</form>
+{% endblock contenido %}

@@ -1,0 +1,28 @@
+{% extends 'genericos/base.html' %}
+
+{% block title_head %}
+<title>Jugadores</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+<h1>Listado de Jugadores</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+
+<a href= {% url 'inicio:crear_jugador'%}>Crear jugador</a>
+
+{% if object_list %}
+
+<ul> 
+    {% for jugador in object_list %}
+    <li><a href= {% url 'inicio:detalle_jugador' paleta.id %}>{{jugador}}</a> </li>
+    <a href= {% url 'inicio:modificar_jugador' paleta.id %}>Modificar Jugador </a>  . <a href= {% url 'inicio:eliminar_jugador' paleta.id %}> Eliminar Jugador </a>
+    
+    {% endfor %}
+</ul>
+{% else %}
+<h3>No se encontraron Jugadores</h3>
+{% endif %}
+{% endblock contenido %}

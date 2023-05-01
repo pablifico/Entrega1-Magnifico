@@ -1,0 +1,28 @@
+{% extends 'genericos/base.html' %}
+
+{% block title_head %}
+    <title>Editar perfil</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+    <h1>Editar perfil</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+
+{% if form.error %}
+<p>El formulario no es válido.</p>
+{% endif %}
+
+
+<form action={% url 'usuarios:editar_perfil' %} method="post" enctype='multipart/form-data'>
+
+    {% csrf_token %}
+    <table>
+        {{form}}
+    </table>
+    <button type='button'><a href={% url 'usuarios:cambiar_clave' %}> Cambiar Clave </a></button>
+    <button>Editar</button>
+</form>
+{% endblock contenido %}

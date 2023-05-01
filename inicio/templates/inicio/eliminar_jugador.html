@@ -1,0 +1,21 @@
+{% extends 'genericos/base.html' %}
+
+{% block title_head %}
+    <title>Eliminar Jugador</title>
+{% endblock title_head %}
+
+{% block h1_header %}   
+    <h1>Eliminando Jugadores</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+
+<form action={% url 'inico:eliminar_jugador' jugador.id %} method="post">
+    {% csrf_token %}
+    <h4>Quiere eliminar los datos de {{jugador}}?</h4>
+    <button>Confirmar</button>
+    <button>Eliminar</button>
+</form>
+
+{% endblock contenido %}

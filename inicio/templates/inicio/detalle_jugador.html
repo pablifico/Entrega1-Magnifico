@@ -1,0 +1,27 @@
+{% extends 'genericos/base.html' %}
+
+{% block title_head %}
+<title>Jugador</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+<h1>Jugador: {{jugador}}</h1>
+{% endblock h1_header %}
+
+
+{% block contenido %}
+
+
+<ul> 
+    <li>Nombre: {{jugador.nombre}}</li>
+    <li>Edad: {{jugador.edad}}</li>
+    <li>Decripcion: {{jugador.descripcion | safe}}</li>
+    <li>Fecha de Nacimiento: {{jugador.fecha_nacimiento}}</li>
+    <li>Posicion: {{jugador.posicion}}</li>
+    <li>Foto de Identificacion: {{jugador.foto_de_identificacion}}</li>
+    
+
+</ul>
+<a href= {% url 'inicio:modificar_jugador' paleta.id %}>Modificar Jugador </a>  . <a href= {% url 'inicio:eliminar_jugador' paleta.id %}> Eliminar Jugador </a>
+
+{% endblock contenido %}
