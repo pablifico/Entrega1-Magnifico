@@ -11,7 +11,7 @@ class FormularioRegistro(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1' 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
         help_texts = {k: '' for k in fields}
         
         
@@ -20,15 +20,15 @@ class FormularioRegistro(UserCreationForm):
 class EdicionPerfil(UserChangeForm):
     password = None
     email = forms.EmailField()
-    first_name = forms.CharField(lable='Nombre', max_length=30)
-    first_name = forms.CharField(lable='Apellido', max_length=30)
+    first_name = forms.CharField(label='Nombre', max_length=30)
+    first_name = forms.CharField(label='Apellido', max_length=30)
     
     avatar = forms.ImageField(required=False)
     
     
     class Meta:
         model = User
-        fields = [ 'email', 'first_name' 'last_name', 'avatar']
+        fields = [ 'email', 'first_name', 'last_name', 'avatar']
     
     
     

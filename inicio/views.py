@@ -9,7 +9,7 @@ from inicio.models import Jugador
 
 
 def mi_vista(request):
-    return render(request, 'inicio/index.html')
+    return render(request, 'inicio/inicio.html')
 
 def sobre_nosotros(request):
     return render(request, 'inicio/sobre_nosotros.html')

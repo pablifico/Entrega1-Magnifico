@@ -6,11 +6,11 @@ app_name = 'inicio'
 urlpatterns = [
     path('', views.mi_vista, name='inicio'),
     path('sobre_nosotros', views.sobre_nosotros, name='sobre_nosotros'),
-    path('jugador/', views.JugadorListView.as_view, name='lista_jugadores'),
-    path('jugador/crear/', views.JugadorCreateView.as_view, name='crear_jugador'),
-    path('jugador/<int:pk>/', views.JugadorDetailView.as_view, name='detalle_jugador'),
-    path('jugador/<int:pk>/modificar/', views.JugadorUpdateView.as_view, name='modificar_jugador'),
-    path('jugador/<int:pk>/eliminar/', views.JugadorDeleteView.as_view, name='eliminar_jugador'),
+    path('/inicio/jugador/', views.JugadorListView.as_view, name='lista_jugadores'),
+    path('/inicio/jugador/crear/', views.JugadorCreateView.as_view, name='crear_jugador'),
+    path('/inicio/jugador/<int:pk>/', views.JugadorDetailView.as_view, name='detalle_jugador'),
+    path('/inicio/jugador/<int:pk>/modificar/', views.JugadorUpdateView.as_view, name='modificar_jugador'),
+    path('/inicio/jugador/<int:pk>/eliminar/', views.JugadorDeleteView.as_view, name='eliminar_jugador'),
 
 
 ]

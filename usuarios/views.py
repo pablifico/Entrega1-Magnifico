@@ -70,7 +70,7 @@ def editar_perfil(request):
             
            return render(request, 'usuarios/editar_perfil.html', {'from': fromulario})
     
-    fromulario = EdicionPerfil(inital={'avatar': request.user.infoextra.avatar}, instance=request.user)
+    fromulario = EdicionPerfil(initial={'avatar': request.user.infoextra.avatar}, instance=request.user)
     return render(request, 'usuarios/editar_perfil.html', {'from': fromulario})
 
 
